@@ -238,3 +238,9 @@
 .bold{
   font-weight: bold;
 }
+
+.datablock span {
+  word-wrap: break-word; /* Break long words */
+  word-break: break-all;  /* Break text if necessary */
+  white-space: normal;    /* Ensure normal text wrapping */
+}
