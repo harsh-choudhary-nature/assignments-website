@@ -1,0 +1,104 @@
+/* src/components/NavBar.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar {
+  background-color: #333;
+  padding: 1rem 2rem 1rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  transition: transform 0.3s ease; /* For smooth slide effect */
+}
+
+.navbar.hidden {
+  transform: translateY(-100%); /* Hide the navbar by sliding it up */
+}
+
+.navbar.visible {
+  transform: translateY(0); /* Show the navbar */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+/*  max-width: 1200px;*/
+  margin: 0 auto;
+}
+
+.navbar-logo a {
+  color: #fff;
+  font-size: calc(1.5rem * var(--font-size-scale));
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: none;
+  font-size: calc(1.8rem * var(--font-size-scale));
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: calc(1rem * var(--font-size-scale));
+}
+
+.nav-link:hover {
+  color: #ddd;
+}
+
+/* Responsive styles for mobile */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    z-index: 10;
+  }
+  .navbar-container {
+    flex-direction: row-reverse;
+  }
+
+  .nav-menu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    transition: transform 0.3s ease; /* Transition for sliding effect */
+  }
+
+  .nav-menu.active {
+    transform: translateX(250px); /* Slide in */
+  }
+
+  .nav-item {
+    margin: 1rem 0;
+  }
+
+  .nav-link {
+    font-size: calc(1rem * var(--font-size-scale));
+  }
+}
+

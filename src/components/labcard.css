@@ -1,0 +1,76 @@
+/* src/components/LabCard.css */
+.lab-card {
+  position: relative;
+  background-size: 100%;
+  background-position: top left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  height: 100%;
+  transition: transform 0.4s ease, background-size 0.4s ease;
+}
+
+.lab-card:hover {
+  transform: translateY(-5px);
+  background-size: 200%;
+}
+
+.lab-card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Glass effect color */
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.lab-card:hover .card-overlay {
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: none;
+}
+
+
+.lab-card .card-content {
+  position: relative;
+  z-index: 2; /* Ensure the text is above the overlay */
+  height: 100%;
+}
+
+
+.lab-card h3 {
+  font-size: calc(1.5rem * var(--font-size-scale));
+  margin-bottom: 1rem;
+  color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 8px 8px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.lab-card p {
+  font-size: calc(1rem * var(--font-size-scale));
+  color: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 8px 8px;
+  box-sizing: border-box;
+  backdrop-filter: blur(5px);
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.lab-card:hover h3{
+  border-color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lab-card:hover p{
+  border-color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+}
