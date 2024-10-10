@@ -484,7 +484,7 @@ export const projectsData = [
     gifUrl: '/platformers-multiagent/platformers-multiagent.gif',
     zipUrl: '/platformers-multiagent/platformers-multiagent.zip',
     tableOfContents: `<section id="toc" class="datablock">  
-                        <h3> Table of Contents </h3>  
+                        <h3> Table of Contents</h3>  
                         <ul>  
                           <li> <a href="#introduction">Introduction</a></li> 
                           <li> <a href="#q1">Q1: </a></li>   
