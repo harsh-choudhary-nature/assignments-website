@@ -26,7 +26,7 @@ function App() {
                   </section>
                   <section id="contact">
                     <Contact />
-                  </section>
+                  </section> 
                 </>
               }/>
             <Route path="/project/:projectId" element={<ProjectDetail />} />
