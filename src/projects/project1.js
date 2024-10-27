@@ -163,7 +163,7 @@ const Project1 = () => {
               </div>
           </p>
           <p>
-            Tp run without graphics, you can use the <span className="monospace">--no-graphics</span> flag:
+            To run without graphics, you can use the <span className="monospace">--no-graphics</span> flag:
             <div className="code-block">
               <span className="code">python3 platformers.py --layout small_test1.lay --agent RandomAgent --no-graphics</span>
               <button className="copy-btn">
