@@ -111,7 +111,87 @@ const Project1 = () => {
           <dd>Contains code for starting the game and parsing arguments.</dd>
           <dt>Player.py</dt>
           <dd>Contains code for animating the player when display is enabled.</dd>
+          <dt>requirements.txt</dt>
+          <dd>Contains the package versions for virtual environment.</dd>
         </dl>
+        <p>
+          <span className="important">Python Environment:</span> This project requires <span className="bold monospace">python3.10</span> (being specific, the source code used <span className="monospace">python3.10.12</span>). Navigate to the project directory. Make sure you have <span className="monospace">virtualenv</span> installed on your system. If not, run the command:
+          <div className="code-block">
+            <span className="code">pip3 install virtualenv</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+        </p>
+        <p> To check if <span className="monospace">virtualenv</span> has been successfully installed or was installed already, run:
+          <div className="code-block">
+            <span className="code">python3 -m virtualenv --version</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+        </p>
+        <p> If the installation of <span className="monospace">virtualenv</span> is successful, its version will be displayed!
+        </p>
+        <p> Create a Python virtual environment with virtualenv using <span className="monospace">python3</span> executable as the base(give the accessible path to the executable of python3 as argument to <span className="monospace">-p</span>):
+          <div className="code-block">
+            <span className="code">python3 -m virtualenv -p /usr/bin/python3 platformers_search_venv</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+
+        </p>
+        <p> To activate the environment, run:
+        </p>
+        <ul>
+          <li> 
+            <p> Linux or Mac:
+              <div className="code-block">
+                <span className="code">source platformers_search_venv/bin/activate</span>
+                <button className="copy-btn">
+                  <i className="fas fa-copy"></i>
+                  <i className="fas fa-check"></i>
+                </button>
+              </div>
+            </p>
+          </li>
+          <li> 
+            <p> Windows:
+              <div className="code-block">
+                <span className="code">.\platformers_search_venv\Scripts\activate</span>
+                <button className="copy-btn">
+                  <i className="fas fa-copy"></i>
+                  <i className="fas fa-check"></i>
+                </button>
+              </div>
+            </p>
+          </li>
+
+        </ul>
+        <p>
+          Install all the packages needed for this project by running:
+          <div className="code-block">
+            <span className="code">pip3 install -r requirements.txt</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+        </p>
+        <p> You are now ready to get started with this project. To deactivate the environment, run:
+          <div className="code-block">
+            <span className="code">deactivate</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+
+        </p>
       </section>
 
       <div className="question">

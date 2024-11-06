@@ -1,0 +1,283 @@
+.project-detail {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.project-image {
+  width: 90%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  align-self: center;
+}
+
+.project-detail h2 {
+  font-size: calc(2rem * var(--font-size-scale));
+  color: #333;
+  text-align: center;
+  margin-bottom: 12px;
+} 
+
+.project-detail h3 {
+  font-size: calc(1.5rem * var(--font-size-scale));
+  color: #333; /* Darker color for the heading */
+  margin-bottom: 12px;
+}
+
+.project-detail h4 {
+  font-size: calc(1.2rem * var(--font-size-scale));
+  color: #333;
+  margin-top: 20px;
+}
+
+
+.project-detail div {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+/* data related styling */
+
+.datablock {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Light shadow */
+}
+
+.datablock ul {
+  list-style-type: disc; /* Remove default bullet points */
+  padding-left: 4px;
+}
+
+
+
+.datablock li {
+  margin-bottom: 10px; /* Space between list items */
+  color: #555;
+}
+
+.datablock a {
+  color: #0056b3; /* Blue color for links */
+  text-decoration: none; /* Remove underline from links */
+  font-size: calc(1.1rem * var(--font-size-scale)); /* Slightly larger font size for links */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.datablock a:hover {
+  color: #0000b3; /* Darker blue on hover */
+}
+
+.datablock a:active {
+  color: #ff007f; /* Even darker shade when clicked */
+}
+
+.datablock a:visited {
+  color: #0056b3;
+}
+
+.datablock p {
+  font-size: calc(1.1rem * var(--font-size-scale));
+  line-height: 1.6; /* Improve readability with increased line height */
+  color: #555; /* Slightly lighter color for text */
+  margin-bottom: 20px;
+}
+
+.datablock .code-block {
+  background-color: #333; /* Dark background for the code block */
+  color: #fff; /* White text inside the code block */
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+  margin-top: 8px;
+}
+
+.code-block .code {
+  margin-right: 10px;
+  font-size: calc(1rem * var(--font-size-scale));
+}
+
+.code-block .copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: calc(1.2rem * var(--font-size-scale));
+  margin-left: 10px;
+  position: relative;
+/*  background-color: red;*/
+  padding: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center ;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  transition: transform 0.3s ease; /* Smooth icon hover effect */
+}
+
+.copy-btn i {
+  position: absolute;
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.copy-btn:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.copy-btn:active {
+  transform: scale(0.9); /* Slightly decrease size on click */
+}
+
+/* Hide check icon by default */
+.copy-btn .fa-check {
+  display: none;
+}
+
+/* Show copy icon by default */
+.copy-btn .fa-copy {
+  display: inline;
+}
+
+/* When copied, hide copy icon and show check icon */
+.copy-btn.copied .fa-copy {
+  display: none;
+}
+
+.copy-btn.copied .fa-check {
+  display: inline;
+}
+
+/* Styling for the definition list */
+.datablock dl {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Two columns, 1 for dt and 2 for dd */
+  row-gap: 10px; /* Add spacing between rows */
+  column-gap: 20px; /* Add spacing between columns */
+  margin: 10px 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.datablock dt {
+  grid-column: 1; /* Position dt in the first column */
+  text-align: left; /* Align text to the left */
+  text-decoration: underline;
+  padding: 5px 0;
+}
+
+.datablock dd {
+  grid-column: 2; /* Position dd in the second column */
+  text-align: left; /* Align dd text to the left */
+  margin: 0; /* Remove default margin */
+  padding: 5px 0;
+  color: #555;
+}
+
+.monospace {
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: calc(1.1rem * var(--font-size-scale));
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table thead tr {
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.styled-table tbody tr {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #333;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.nested-table {
+  width: 100%;
+/*  border-collapse: collapse;*/
+  margin-top: 10px;
+  font-size: calc(1rem * var(--font-size-scale));
+  text-align: left;
+}
+
+.nested-table thead tr {
+  background-color: #555; /* Slightly lighter than main table */
+  color: #fff;
+}
+
+.nested-table th,
+.nested-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Prevent the header from changing color on hover */
+.nested-table thead tr:hover {
+  background-color: #555; /* Keep the header color on hover */
+}
+
+.nested-table tbody tr {
+  background-color: #f7f7f7;
+}
+
+.nested-table tbody tr:nth-of-type(even) {
+  background-color: #eeeeee;
+}
+
+.nested-table tbody tr:hover {
+  background-color: #e9e9e9;
+}
+
+.important{
+  color: #000;
+  font-weight: bold;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.datablock span {
+  word-wrap: break-word; /* Break long words */
+  /*word-break: break-all;  /* Break text if necessary */
+  white-space: normal;    /* Ensure normal text wrapping */
+}

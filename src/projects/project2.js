@@ -120,7 +120,87 @@ const Project2 = () => {
           <dd>Contains code for animating the player when display is enabled.</dd>
           <dt>playerRules.py</dt>
           <dd>Contains the rules for the platformer player of the game.</dd>
+          <dt>requirements.txt</dt>
+          <dd>Contains the package versions for virtual environment.</dd>
         </dl>
+        <p>
+          <span className="important">Python Environment:</span> This project requires <span className="bold monospace">python3.10</span> (being specific, the source code used <span className="monospace">python3.10.12</span>). Navigate to the project directory. Make sure you have <span className="monospace">virtualenv</span> installed on your system. If not, run the command:
+          <div className="code-block">
+            <span className="code">pip3 install virtualenv</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+        </p>
+        <p> To check if <span className="monospace">virtualenv</span> has been successfully installed or was installed already, run:
+          <div className="code-block">
+            <span className="code">python3 -m virtualenv --version</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+        </p>
+        <p> If the installation of <span className="monospace">virtualenv</span> is successful, its version will be displayed!
+        </p>
+        <p> Create a Python virtual environment with virtualenv using <span className="monospace">python3</span> executable as the base(give the accessible path to the executable of python3 as argument to <span className="monospace">-p</span>):
+          <div className="code-block">
+            <span className="code">python3 -m virtualenv -p /usr/bin/python3 platformers_multiagent_venv</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+
+        </p>
+        <p> To activate the environment, run:
+        </p>
+        <ul>
+          <li> 
+            <p> Linux or Mac:
+              <div className="code-block">
+                <span className="code">source platformers_multiagent_venv/bin/activate</span>
+                <button className="copy-btn">
+                  <i className="fas fa-copy"></i>
+                  <i className="fas fa-check"></i>
+                </button>
+              </div>
+            </p>
+          </li>
+          <li> 
+            <p> Windows:
+              <div className="code-block">
+                <span className="code">.\platformers_multiagent_venv\Scripts\activate</span>
+                <button className="copy-btn">
+                  <i className="fas fa-copy"></i>
+                  <i className="fas fa-check"></i>
+                </button>
+              </div>
+            </p>
+          </li>
+
+        </ul>
+        <p>
+          Install all the packages needed for this project by running:
+          <div className="code-block">
+            <span className="code">pip3 install -r requirements.txt</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+        </p>
+        <p> You are now ready to get started with this project. To deactivate the environment, run:
+          <div className="code-block">
+            <span className="code">deactivate</span>
+            <button className="copy-btn">
+              <i className="fas fa-copy"></i>
+              <i className="fas fa-check"></i>
+            </button>
+          </div>
+
+        </p>
       </section>
 
       <div className="question">
@@ -162,6 +242,8 @@ const Project2 = () => {
             <li>
               The player starts with <span className="bold"> 0 points </span>. The scoring rules are shown in table below:-
             </li>
+          </ul>
+
             <dl>
               <dt> Acting 'noop'</dt>
               <dd> -1 points</dd>
@@ -179,8 +261,6 @@ const Project2 = () => {
               <dd> 0 points</dd>
 
             </dl>
-
-          </ul>
           <p>
             As like last project, there are a no. of command line arguments that you can use, and most of them come with default values, as for here the default player agent is <span className="monospace bold">KeyboardAgent</span> and the default ghost agent is <span className="monospace bold">RandomGhostAgent</span>. If randomness if preventing you to debug, use the <span className="monospace bold">--fixSeed seed</span> option, <span className="monospace bold">0&le;seed&lt;2**32</span>. You can refer <span className="monospace bold">help.txt</span> for all options available.
           </p>
@@ -439,7 +519,7 @@ const Project2 = () => {
             <li>Use <span className="monospace bold">self.evaluation_cache</span> to pass to evaluation function some additional informations like depth (if you want) and <span className="monospace bold">self.cache</span> to memoize recursive calls (again, if you want), or you may define your custom data structures if you do not want to use these, but make sure to manage all the things keeping in mind the above three points.
             </li>
           </ul>
-          <p> We will run your game on <span className="monospace bold">mediumClassic.lay</span> 10 times and we shall follow the following <span className="bold">grading scheme</span>:-</p>
+          <p> We will run your implementation on <span className="monospace bold">mediumClassic.lay</span> 10 times and we shall follow the following <span className="bold">grading scheme</span>:-</p>
 
           <table className = "styled-table">
             <thead>

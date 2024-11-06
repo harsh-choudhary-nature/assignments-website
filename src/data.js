@@ -14,6 +14,14 @@ export const projectsData = [
     imageUrl: '/platformers-multiagent/platformers-multiagent.png',
     gifUrl: '/platformers-multiagent/platformers-multiagent.gif',
     zipUrl: '/platformers-multiagent/platformers-multiagent.zip',
+  },
+  {
+    id: 3,
+    title: 'Platformer - Reinforcement',
+    description: 'The project explores Model Based and Model Free RL techniques, and tasks the students to implement Value Iteration, Policy Iteration, Temporal Difference, Epsilon Greedy and approximate Q Learning techniques.',
+    imageUrl: '/platformers-reinforcement/platformers-reinforcement.png',
+    gifUrl: '/platformers-reinforcement/platformers-reinforcement.gif',
+    zipUrl: '/platformers-reinforcement/platformers-reinforcement.zip',
   }
   // Add other projects
 
