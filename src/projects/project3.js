@@ -219,13 +219,13 @@ const Project3 = () => {
             </li>
             <li> There are 5 actions for the player: <span className="bold">left</span> (left arrow key), <span className="bold">right</span> (right arrow key), <span className="bold">up</span> (up arrow key), <span className="bold">down</span> (down arrow key) and <span className="bold">noop</span>.
             </li>
-            <li> The player cannot take up action unless the next cell has a space station. Thus, there is no flying in this version, but falling is still possible.
+            <li> The player cannot take 'up' action unless the next cell has a space station. Thus, there is no flying in this version, but falling is still possible.
             </li>
             <li> The goal of the game is to reach good terminal state. The states indicating <span className="bold">saw</span> are bad terminal states and the ones with <span className="bold">trophy</span> are good. The animating trophy has better rewards than the static one.
             </li>
-            <li> The actions are not deterministic; when you take a valid action, the actions is unaltered with <span className="bold">1-noise</span> probability, and is turned into a random action with <span className="bold">noise</span> probability by the environment.
+            <li> The actions are not deterministic; when you take a valid action, the action is unaltered with <span className="bold">1-noise</span> probability, and is turned into a random action with <span className="bold">noise</span> probability by the environment.
             </li>
-            <li> The only dynamic part of game is the player's position and it is thus enough to only keep track of Platformer position in the state information. The living reward may be +ve, -ve or 0. The goal is to have policy in order to maximise long term rewards.
+            <li> The only dynamic part of game is the player's position and it is thus enough to only keep track of <span className="bold">Platformer position</span> in the state information. The living reward may be +ve, -ve or 0. The goal is to come up with a policy in order to <span className="bold">maximise long term rewards</span>.
             </li>
           </ul>
           <p>
@@ -259,7 +259,7 @@ const Project3 = () => {
             </div>
           </p>
           <p>
-            For this question, you will have to implement the <span className="monospace">ValueIteartionAgent</span> class in <span className="monospace">playerAgents.py</span>. As always, the <span className="monospace">act</span> method will be called, which calls <span className="monospace bold">self.run_value_iteration(problem)</span>, <span className="monospace bold">self.populate_q_values(problem)</span> and <span className="monospace bold">self.populate_policy(problem)</span> methods and your task is to implement all of these, Make sure the required data structures are populated as is mentioned in the comments. Test your implementation with:
+            For this question, you will have to implement the <span className="monospace">ValueIteartionAgent</span> class in <span className="monospace">playerAgents.py</span>. As always, the <span className="monospace">act</span> method will be called, which calls <span className="monospace bold">self.run_value_iteration(problem)</span>, <span className="monospace bold">self.populate_q_values(problem)</span> and <span className="monospace bold">self.populate_policy(problem)</span> methods and your task is to implement all of these, Make sure the required data structures are populated as mentioned in the comments of this class. Test your implementation with:
             <div className="code-block">
               <span className="code">python3 platformersMdp.py --noise 0.5 --livingReward -0.1 --verbose --agent ValueIterationAgent</span>
               <button className="copy-btn">
@@ -279,6 +279,8 @@ const Project3 = () => {
             <li>Terminal states have no entry in the Q Table, but <span className="monospace">self.values</span> must assign 0 value to them and <span className="monospace">self.policy</span> must say <span className="monospace">None</span> for all <span className="bold">terminal states</span>.
             </li>
             <li>  Each call to <span className="monospace">act</span> is limited by time of 4s.
+            </li>
+            <li>  Do not break early on convergence, though you can check for it.
             </li>
           </ul>
 
@@ -321,6 +323,8 @@ const Project3 = () => {
             </li>
             <li> Each call to <span className="monospace">act</span> is limited by time of 4s.
             </li>
+            <li>  Do not break early on convergence, though you can check for it.
+            </li>
           </ul>
           <p>
             You can check your solution with autograder:
@@ -356,7 +360,7 @@ const Project3 = () => {
           <ul>  
             <li> Calling <span className="monospace">problem.get_actions(state)</span> on a terminal state is illegal.
             </li>
-            <li> Terminal states have no entry in the Q Table but <span className="monospace">self.policy</span> must say None for all terminal states.
+            <li> Terminal states have no entry in the Q Table but <span className="monospace">self.policy</span> (if maintained) shall say None for all terminal states.
             </li>
           </ul>
           <p> Follow the comments to understand and maintain the data structures for correct coordination with the autograder. Try running the following to visulaise your implementation:
@@ -392,13 +396,6 @@ const Project3 = () => {
         <section id="q4" className="datablock">  
           <h3> Question 4: Epsilon Greedy (1 point) </h3>  
           <p> Now you have to implement <span className="monospace">EpsilonGreedyQAgent</span> class in <span className="monospace">playerAgents.py</span>. You will notice this inherits from <span className="monospace">TDQLearningAgent</span> class. Only the <span className="monospace">act</span> method has to be overridden. Use <span className="monospace">self.rng.random()</span> to draw a random no., and take a random action with <span className="monospace">self.epsilon</span> probability, other wise return the best action so far based on Q Table. Just like before, calling <span className="monospace">problem.get_actions(0, state)</span> for terminal states is not allowed, and the time limit per call to <span className="monospace">act</span> is 1s.
-            <div className="code-block">
-              <span className="code">python3 platformers.py --layout narrowFall.lay --playerAgent ExpectimaxAgent</span>
-              <button className="copy-btn">
-                <i className="fas fa-copy"></i>
-                <i className="fas fa-check"></i>
-              </button>
-            </div>
           </p>
           <p> Run your agent on a slightly larger board with more foods:
             <div className="code-block">
@@ -419,7 +416,7 @@ const Project3 = () => {
             </div>
           </p>
 
-          <p> All the implementations so far are general enough to apply this to <span className="bold">MountainCar</span> problem (<i>Gymnasium</i> offers this and many other environments to test RL algorithms). The objective is to find optimal combination of acceleration with position and velocity in order to move the car on top of hill. The continuous state space is discretized by dividing it into bins. The learning is enhanced by decaying the epsilon value over the training phase. Test with different increasing values for <span className="monospace">--train</span> to witness how an untrained agent does not perform well. With 1000 training epsiodes, the agent shall work alright:
+          <p> All the implementations so far are general enough to apply this to <span className="bold">MountainCar</span> problem (<i>Gymnasium</i> offers this and many other environments to test RL algorithms). The objective is to find optimal combination of acceleration with position and velocity in order to move the car on top of hill. The continuous state space is discretized by dividing it into bins, and actions are discrete- <span className="bold">accelerate left</span>, <span className="bold">stop</span> or <span className="bold">accelerate right</span>. The learning is enhanced by decaying the epsilon value over the training phase. Test with different increasing values for <span className="monospace">--train</span> to witness how an untrained agent does not perform well. With 1000 training epsiodes, the agent shall work alright:
             <div className="code-block">
               <span className="code">python3 mountainCar.py --epsilon 1 --discount 0.9 --alpha 0.9 --noTrainGraphics --train 1000 --test 1</span>
               <button className="copy-btn">
