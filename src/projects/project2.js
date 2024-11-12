@@ -288,7 +288,7 @@ const Project2 = () => {
           <p> <span className="important">Note:</span> It is advised to use <span className="monospace bold">self.rng</span> as the random number generator, if you need to. It is internally initialized as <span className="monospace bold">np.random.default_rng(seed = args['fix_seed'])</span> and would thus work appropriately to any seed value that you or the autograder uses.
           </p>
 
-          <p>We will check your implementation on only few of the layouts which are biased to allow the player to win for majority times. Note that there is a <span class = "bold">time limit of 0.5s </span> for each call to <span className="monospace bold">act</span> method, so make sure to keep the time taken inside <span className="monospace bold">evaluation_function</span> controlled. The exact <span class = "bold">grading scheme</span> will be printed on terminal window for each of the layouts:
+          <p>We will check your implementation on only few of the layouts which are biased to allow the player to win for majority times. Note that there is a <span class = "bold">time limit of 1s </span> for each call to <span className="monospace bold">act</span> method, so make sure to keep the time taken inside <span className="monospace bold">evaluation_function</span> controlled. The exact <span class = "bold">grading scheme</span> will be printed on terminal window for each of the layouts:
             You can check your solution with autograder:
             <div className="code-block">
               <span className="code">python3 autograder.py -q q1 --noGraphics</span>
@@ -315,7 +315,7 @@ const Project2 = () => {
             </li>
             <li>  Iterate through the actions in <span class="bold">same order</span> as is returned by <span className='monospace bold'>problem.get_actions(agent_index, cur_game_state)</span> and only update the best tracked value with a value from new action on <span className="bold">strict inequality</span>. This is needed to ensure correctness with the autograder.
             </li>
-            <li> If you get <span className="bold">time limit exceeded</span>, try running without putting any extra print statements inside recursive calls. Any depth greater than 2 will likely exceed the time limit of <span className="bold">0.5s</span>, and so autograder will use <span className="bold">depth 2</span> only.
+            <li> If you get <span className="bold">time limit exceeded</span>, try running without putting any extra print statements inside recursive calls. Any depth greater than 2 will likely exceed the time limit of <span className="bold">1s</span>, and so autograder will use <span className="bold">depth 2</span> only.
             </li>
           </ul>
           <p>
@@ -510,7 +510,7 @@ const Project2 = () => {
             Implement the <span className="monospace bold">act</span> method as per your choice, either using <span className="monospace bold">AlphaBetaAgent</span> design or <span className="monospace bold">ExpectimaxAgentWithCache</span> idea, or something even cleverer. Just keep in mind the following:-
           </p>
           <ul>
-            <li> Time limit per call to act is <span className="bold">0.5s</span>.
+            <li> Time limit per call to act is <span className="bold">1s</span>.
             </li>
             <li><span className="monospace bold">self.evaluation_function</span> redirects to <span className="monospace bold">better_evaluation_function(game_state, problem, helper_cache = None)</span> in <span className="monospace bold">evaluationFunctions.py</span>, so <span className="bold">write your logic there</span>. The <span className="monospace bold">helper_cache</span> may also be helpful in caching some results specific to evaluation of specific game states. (Some hints provided there to guide you)
             </li>
