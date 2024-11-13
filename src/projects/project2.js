@@ -239,6 +239,9 @@ const Project2 = () => {
             <li> Each of the player agents have got an <span className="monospace bold">act</span> method. It takes the agent index <span className="bold">(0 for player and numbered successively for ghosts)</span>, current game state, and problem instance as the argument, and must return the action the player intends to perform from the current game state.
 
             </li>
+            <li> The priority of food and freezer is higher than ghost, so if they occur at same position, food (or freezer) will be eaten first and then the effect of hitting ghost will be visible.
+
+            </li>
             <li>
               The player starts with <span className="bold"> 0 points </span>. The scoring rules are shown in table below:-
             </li>
