@@ -544,7 +544,7 @@ const Project3 = () => {
           
           <p>Since you need greater than 780 points on average in top 5 games, <span className="bold">hitting an inactive ghost</span> once or twice becomes quite essential. To visulaise and debug, use:
             <div className="code-block">
-              <span className="code">python3 platformers.py --train 1000 --fixSeed 0 --layout forward.lay --playerAgent ApproximateQLearningAgent --noTrainGraphics --test 20 --epsilon 0.5 --discount 0.999 --alpha 0.5 --featureExtractor advanced_feature_extractor</span>
+              <span className="code">python3 platformers.py --train 2000 --fixSeed 0 --layout forward.lay --playerAgent ApproximateQLearningAgent --noTrainGraphics --test 20 --epsilon 0.5 --discount 0.9 --alpha 0.5 --featureExtractor advanced_feature_extractor</span>
               <button className="copy-btn">
                 <i className="fas fa-copy"></i>
                 <i className="fas fa-check"></i>
