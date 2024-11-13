@@ -416,6 +416,16 @@ const Project3 = () => {
             </div>
           </p>
 
+          <p> You might not be convinced yet of the need for exploration. To illustrate it, we provide you with <span className="monospace">epsilonGreedy.lay</span>. Since the action ordering of player has 'left' action before 'right', so the <span className="monospace">TDQLearningAgent</span> learns a suboptimal policy, and sticks to it due to no exploration. Run the command to visulaise yourselves that <span className='monospace'>TDQLearningAgent</span> can only manage 503 points as opposed to 513 points of <span className='monospace'>EpsilonGreedyQAgent</span>:
+            <div className="code-block">
+              <span className="code">python3 platformers.py --layout epsilonGreedy.lay --playerAgent TDQLearningAgent --train 15 --test 1 --noTrainGraphics && python3 platformers.py --layout epsilonGreedy.lay --playerAgent EpsilonGreedyQAgent --train 15 --test 1 --noTrainGraphics</span>
+              <button className="copy-btn">
+                <i className="fas fa-copy"></i>
+                <i className="fas fa-check"></i>
+              </button>
+            </div>
+          </p>
+
           <p> All the implementations so far are general enough to apply this to <span className="bold">MountainCar</span> problem (<i>Gymnasium</i> offers this and many other environments to test RL algorithms). The objective is to find optimal combination of acceleration with position and velocity in order to move the car on top of hill. The continuous state space is discretized by dividing it into bins, and actions are discrete- <span className="bold">accelerate left</span>, <span className="bold">stop</span> or <span className="bold">accelerate right</span>. The learning is enhanced by decaying the epsilon value over the training phase. Test with different increasing values for <span className="monospace">--train</span> to witness how an untrained agent does not perform well. With 1000 training epsiodes, the agent shall work alright:
             <div className="code-block">
               <span className="code">python3 mountainCar.py --epsilon 1 --discount 0.9 --alpha 0.9 --noTrainGraphics --train 1000 --test 1</span>
