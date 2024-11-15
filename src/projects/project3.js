@@ -150,7 +150,7 @@ const Project3 = () => {
         </p>
         <p> Create a Python virtual environment with virtualenv using <span className="monospace">python3</span> executable as the base(give the accessible path to the executable of python3 as argument to <span className="monospace">-p</span>):
           <div className="code-block">
-            <span className="code">python3 -m virtualenv -p /usr/bin/python3 platformers_reinforcement_venv</span>
+            <span className="code">python3 -m virtualenv -p /usr/bin/python3 platformers_venv</span>
             <button className="copy-btn">
               <i className="fas fa-copy"></i>
               <i className="fas fa-check"></i>
@@ -164,7 +164,7 @@ const Project3 = () => {
           <li> 
             <p> Linux or Mac:
               <div className="code-block">
-                <span className="code">source platformers_reinforcement_venv/bin/activate</span>
+                <span className="code">source platformers_venv/bin/activate</span>
                 <button className="copy-btn">
                   <i className="fas fa-copy"></i>
                   <i className="fas fa-check"></i>
@@ -175,7 +175,7 @@ const Project3 = () => {
           <li> 
             <p> Windows:
               <div className="code-block">
-                <span className="code">.\platformers_reinforcement_venv\Scripts\activate</span>
+                <span className="code">.\platformers_venv\Scripts\activate</span>
                 <button className="copy-btn">
                   <i className="fas fa-copy"></i>
                   <i className="fas fa-check"></i>
