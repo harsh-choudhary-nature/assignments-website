@@ -5,8 +5,8 @@ const Introduction = () => {
   return (
     <section className="introduction">
       <h1>Welcome to AI Labs</h1>
-      <p>
-        The following projects were created for IIT Goa's introductory Artificial Intelligence course, CS330. They showcase a variety of AI techniques applied to different games. However, the focus of these projects is not on developing AI for video games. Instead, they aim to teach core AI concepts such as informed state-space search, probabilistic inference, and reinforcement learning—fundamental principles that underpin real-world applications like robotics.
+      <p> 
+        Welcome to CS330! In this course, we’re diving into the exciting world of Artificial Intelligence through interactive learning and engaging games. Whether you're new to AI or have a bit of experience, our hands-on approach will help you grasp fundamental concepts in a fun, approachable way.
       </p>
       <p>
         We designed these projects with the following key objectives: 
@@ -23,10 +23,12 @@ const Introduction = () => {
         </ul>
       </p>
       <p>
-        These projects have significantly improved enrollment, teaching evaluations, and student engagement in our course. Over time, they have been refined and debugged through various iterations, and we are pleased to make them available for educational use at other universities as well.
+        Throughout the course, each concept will be introduced with interactive games that bring theory to life. These games provide a unique way to apply what you&rsquo;ve learned, solving problems just like AI agents do. You&rsquo;ll have the chance to test your strategies, improve algorithms, and see how small changes can create big differences in AI performance.
       </p>
 
-      <p>For bug reports or additional information, please refer to the <a href="#contact">Contact</a> section. </p>
+      <p>
+        Join us as we explore the possibilities of Artificial Intelligence and build a solid foundation in the tools and techniques that are transforming our world! For bug reports or additional information, please refer to the <a href="#contact">Contact</a> section.
+      </p>
     </section>
   );
 };
