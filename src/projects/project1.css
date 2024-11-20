@@ -245,3 +245,12 @@
   /*word-break: break-all;  /* Break text if necessary */
   white-space: normal;    /* Ensure normal text wrapping */
 }
+
+/* Styles for screens <= 428px */
+@media (max-width: 428px) {
+  .datablock span.code {
+    word-wrap: break-word; /* Break long words */
+    word-break: break-all; /* Add break-all for smaller screens */
+    white-space: normal;   /* Ensure normal text wrapping */
+  }
+}
