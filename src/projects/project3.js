@@ -52,6 +52,7 @@ const Project3 = () => {
           <li> <a href="#q4">Q4: Epsilon Greedy</a></li>  
           <li> <a href="#q5">Q5: Approximate Q Learning</a></li>
           <li> <a href="#q6">Q6: Advanced Feature Extractor</a></li>
+          <li> <a href="#q7">Q7: Layout Independent Learning</a></li>
           <li> <a href="#submission">Submission</a></li>  
         </ul>  
       </section>
@@ -565,6 +566,91 @@ const Project3 = () => {
             You can check your solution with autograder:
             <div className="code-block">
               <span className="code">python3 autograder.py -q q6 --noGraphics</span>
+              <button className="copy-btn">
+                <i className="fas fa-copy"></i>
+                <i className="fas fa-check"></i>
+              </button>
+            </div>
+          </p>
+        </section>
+
+        <section id="q7" className="datablock">  
+          <h3> Question 7: Layout Independent Learning (1 point) </h3>  
+          <p> The speciality of <span className='monospace'>ApproximateQLearningAgent</span> is that it learns optimal weights for generic features, which is <span className='bold'>not specific to one particular layout</span>. In this question, you will see how the platformer will learn on one layout but will be tested on a previously unseen layout. 
+          </p>
+          <p>
+          However, here the goal is to focus on winning most of the time, and so the feature extractor created for last question may not suffice. Instead, implement a softer version of that feature extractor where the player does not bother hitting frozen ghosts but only focusses on winning the game in the least time, and this shall let your agent win most of the time. Implement this feature extractor in <span className='monospace'>cross_feature_extractor</span> in file <span className='monospace'>featureExtractors.py</span>. These points should yet be kept in mind:
+          </p>
+          <ul>
+            <li> Time limit per call to act is <span className="bold">1s</span>, so do not perform heavy calculations in feature extractor.
+            </li>
+            <li> Use the cache effectively to avoid redundant calculations (otherwise the training would take long time).
+            </li> 
+            <li> Features are preferably strings, though other hashable types are allowed. If using strings, make sure not to use the characters <span className="bold">(</span>, <span className="bold">)</span>, <span className="bold">'</span>, <span className="bold">:</span> as these are used as delimiters by autograder. 
+            </li>
+          </ul>
+          <p> We will train using your extractor on <span className="monospace bold">forward.lay</span> but run it on <span className='monospace bold'>crossCheck.lay</span> 20 times and shall follow the following <span className="bold">grading scheme</span>:-</p>
+
+          <table className = "styled-table">
+            <thead>
+              <tr>
+                <th>No. of games won</th>
+                <th>Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;16</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>&ge;16 and &le;20</td>
+                <td>
+                  <table class= "nested-table">
+                    <thead>
+                      <tr>
+                        <th>Average of top 5</th>
+                        <th>Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>&lt;550</td>
+                        <td>0.5</td>
+                      </tr>  
+                      <tr>
+                        <td>&ge;550</td>
+                        <td>1</td>
+                      </tr>   
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p>Try running this command to see how an agent trained on <span className='monospace'>forward.lay</span> performs so well on <span className='monospace'>testClassic.lay</span>:
+            <div className="code-block">
+              <span className="code">python3 platformers.py --train 2000 --layout forward.lay --playerAgent ApproximateQLearningAgent --noTrainGraphics --test 1 --epsilon 0.5 --discount 0.9 --alpha 0.5 --featureExtractor cross_feature_extractor --testLayout testClassic.lay</span>
+              <button className="copy-btn">
+                <i className="fas fa-copy"></i>
+                <i className="fas fa-check"></i>
+              </button>
+            </div>
+          </p>
+          <p>Similarly, this agent trained on <span className='monospace'>forward.lay</span> performs exceptionally well even on a layout with 3 ghosts (<span className='monospace'>crossCheck.lay</span>), which it has never encountered before:
+            <div className="code-block">
+              <span className="code">python3 platformers.py --train 2000 --layout forward.lay --playerAgent ApproximateQLearningAgent --noTrainGraphics --test 20 --epsilon 0.5 --discount 0.9 --alpha 0.5 --featureExtractor cross_feature_extractor --testLayout crossCheck.lay --noTestGraphics</span>
+              <button className="copy-btn">
+                <i className="fas fa-copy"></i>
+                <i className="fas fa-check"></i>
+              </button>
+            </div>
+          </p>
+          <p>
+            You can check your solution with autograder:
+            <div className="code-block">
+              <span className="code">python3 autograder.py -q q7 --noGraphics</span>
               <button className="copy-btn">
                 <i className="fas fa-copy"></i>
                 <i className="fas fa-check"></i>
