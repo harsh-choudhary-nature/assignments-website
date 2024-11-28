@@ -29,6 +29,6 @@
 }
 
 .introduction li {
-  font-size: calc(1rem * var(--font-size-scale));
+  font-size: calc(1.2rem * var(--font-size-scale));
   margin-bottom: 0.5rem;
 }
