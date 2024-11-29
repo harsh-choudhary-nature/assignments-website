@@ -17,7 +17,7 @@ main {
   flex: 1; 
 }
 
-
+/* 
 @media screen and (min-width: 1400px) {
   :root {
     --font-size-scale: 1.1;
@@ -64,4 +64,4 @@ main {
   :root {
     --font-size-scale: 1.8;
   }
-}
+} */
